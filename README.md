@@ -1,12 +1,8 @@
-# TenderLens: Predicting Single-Bid Government Tenders in Assam
+![Banner](banner.png)
 
 **A machine learning project that learns from 39,000+ real Assam government e-tenders to flag which new tenders are likely to get only one bid, so auditors know where to look first.**
 
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In%20progress-e0a000)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-05556b?style=for-the-badge&logo=sqlite&logoColor=white) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![Status](https://img.shields.io/badge/Status-In%20Progress-e0a000?style=for-the-badge)
 
 > This is a screening tool, not fraud detection. A single bid does not mean anything wrong happened. It only means the tender had no competition, which is worth a closer look.
 
@@ -19,8 +15,8 @@
 | S1 Data audit | Done | 39,500 tender files checked, 6,790 have a bidder list |
 | S2 Cleaning | Done | 16 cleaning steps, 39,411 unique tenders, cleaning log and data dictionary saved |
 | S3 EDA and SQL | Done | 30.1% of tenders got only one bid, 7 charts, results checked again in SQLite |
-| S4 Features and time split | Next | |
-| S5 Baseline and ML models | Planned | |
+| S4 Features and time split | Done | 7 model inputs built, time split into train 2,753 / validation 2,270 / test 1,767 |
+| S5 Baseline and ML models | Next | |
 | S6 NLP on tender titles | Planned | |
 | S7 Final model and SHAP | Planned | |
 | S8 Anomaly detection | Planned | |
@@ -71,7 +67,6 @@ I cleaned the data in 16 steps (notebook 02). Main things I did:
 - Removed 89 duplicate tender IDs.
 - Fixed dates and turned them into proper date columns.
 - Made the target column: 1 = only one bid, 0 = more than one bid. Tenders with no bidder list stay unknown (not 0).
-- Kept missing values as missing for now. They will be filled in S4 using training data only, so no information leaks from the future.
 - Saved every change in `reports/cleaning_log.csv` and described every column in `reports/data_dictionary.csv`.
 
 ---
@@ -103,11 +98,45 @@ All S3 numbers were checked a second time with SQL queries in SQLite (`sql/eda_q
 
 ---
 
-## Methodology (planned)
+## Feature Engineering and Time Split (S4)
 
-- Time-based split: train on tenders up to Sep 2022, validate on Oct to Dec 2022, test on Jan to May 2023. The test set is used only once at the end.
+I turned the S3 findings into 7 inputs the model can learn from. Every input is something we know on the day the tender is first posted, so the model never sees the answer early.
+
+| Feature | Simple meaning |
+|---|---|
+| `dept_rate` | How often this office got single bids in the past (smoothed so small offices do not get extreme values) |
+| `log_value` | Tender value on a log scale, so very large tenders do not dominate |
+| `value_missing` | 1 if the office did not list a value |
+| `bid_window_days` | Days between posting and the bid deadline |
+| `months_to_fy_end` | Months left until the financial year ends on 31 March |
+| `same_day_lot` | 1 if the same office posted the same tender on the same day (split into lots) |
+| `retender_60d` | 1 if the same tender was posted again within 1 to 60 days |
+
+**Time split.** I split by date, not randomly, because in real life the model will always predict future tenders from past ones.
+
+| Set | Period | Tenders | Single-bid rate |
+|---|---|---|---|
+| Train | Up to Sep 2022 | 2,753 | 36.1% |
+| Validation | Oct to Dec 2022 | 2,270 | 27.8% |
+| Test | Jan to May 2023 | 1,767 | 23.8% |
+
+![Split single bid rate](reports/figures/S4a_split_single_bid_rate.png)
+
+Things I did to stop information leaking from the future:
+
+- 46 reference numbers were shared across sets. I moved those 291 tenders forward so each group stays in one set.
+- `dept_rate` for validation and test uses training tenders only. For training rows, it uses only earlier tenders, never the tender itself.
+- Missing values were filled with training medians only (value about Rs 85 lakh, bid window 19 days). The settings are saved in `reports/s4_feature_settings.csv` so the app can use the same numbers later.
+
+The single-bid rate drops from 36% to 28% to 24% across the three sets. The model will need to handle this drift.
+
+---
+
+## Methodology (next steps)
+
 - Compare a simple rule benchmark with Logistic Regression, Random Forest and XGBoost.
 - Handle class imbalance with class weights and threshold tuning.
+- Choose the model on validation, use the test set only once at the end.
 - Explain predictions with SHAP.
 - Separately flag unusual tenders with Isolation Forest.
 - Show everything in a Streamlit app.
@@ -117,20 +146,19 @@ All S3 numbers were checked a second time with SQL queries in SQLite (`sql/eda_q
 ## Limitations
 
 - Only 6,790 tenders have a bidder list, so the model learns from a smaller part of the data.
-- The single-bid rate is changing over time (36% in training, 23% in test), so the model must be checked for this drift.
+- The single-bid rate changes over time (36% train, 28% validation, 24% test), so results must be checked for drift.
 - A single bid is a signal for review, not proof of wrongdoing.
 
 ---
 
 ## Project Structure & How to Run
 
-Note: the notebooks will move into a `notebooks/` folder in the next update.
-
 To run:
 
 1. Download the raw data from [CivicDataLab](https://github.com/CivicDataLab/assam-tenders-data) and place the zip in `data/raw/`.
 2. Install the libraries: `pip install -r requirements.txt`
-3. Run the notebooks in order: 01, 02, 03.
+3. Put the notebooks inside a `notebooks/` folder (the code reads files one folder up).
+4. Run the notebooks in order: 01, 02, 03, 04.
 
 ---
 
