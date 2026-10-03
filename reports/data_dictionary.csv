@@ -1,0 +1,12 @@
+column,meaning,use_for_prediction
+dept_main,Main department (part before ||),yes
+bid_window_days,Days between posting and last date to bid,yes
+window_flag,ok / negative (made empty) / very long (>90 days),yes
+value_missing,True if tender value was blank or ₹0,yes
+giant_value,"True if tender value above ₹1,000 crore",yes
+gap_period,True if posted Mar 2021 – Feb 2022 (incomplete year),yes
+title_key,"Title in small letters, no extra spaces",yes
+is_retender,True if title says retender or same job posted earlier,yes
+award_ratio,Awarded value ÷ estimated value (unreliable ones made empty),NO - known only after bidding
+award_flag,True if award ratio below 0.2 or above 5,NO - known only after bidding
+single_bid,"ANSWER: 1 = one bid, 0 = more than one, empty = unknown",this is the answer
