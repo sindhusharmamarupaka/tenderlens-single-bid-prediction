@@ -1,0 +1,4 @@
+comparison,A wins (% of draws),gap low (2.5%),gap high (97.5%)
+LogReg monthly vs Random,95.8,-0.003,0.048
+LogReg monthly vs Rule B,5.2,-0.049,0.004
+Embeddings vs Random,83.0,-0.014,0.038

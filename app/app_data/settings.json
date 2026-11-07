@@ -1,0 +1,81 @@
+{
+ "clues": [
+  "dept_rate",
+  "log_value",
+  "value_missing",
+  "bid_window_days",
+  "months_to_fy_end",
+  "same_day_lot",
+  "retender_60d"
+ ],
+ "iforest_clues": [
+  "dept_rate",
+  "log_value",
+  "value_missing",
+  "bid_window_days",
+  "months_to_fy_end",
+  "same_day_lot",
+  "retender_60d",
+  "emd_ratio",
+  "log_fee",
+  "work_period_days"
+ ],
+ "iforest_cutoff": 0.5381647849672051,
+ "band_cutoffs": {
+  "High": 0.5029234916956546,
+  "Medium": 0.4525383712191277
+ },
+ "overall_train_rate": 0.3606974209952778,
+ "smoothing_k": 20.0,
+ "log_value_median": 15.958633456646446,
+ "bid_window_median": 19.0,
+ "fill": {
+  "emd_ratio": 0.02,
+  "log_fee": 7.465082736399547,
+  "work_period_days": 180.0
+ },
+ "X_mean": [
+  -4.855549770142658e-16,
+  2.009193008334893e-16,
+  4.1858187673643604e-17,
+  -1.3394620055565953e-16,
+  1.3394620055565953e-16,
+  3.7672368906279246e-17,
+  -4.604400644100797e-17
+ ],
+ "iforest_median": {
+  "dept_rate": 0.3667773684119488,
+  "log_value": 15.958633456646446,
+  "value_missing": 0.0,
+  "bid_window_days": 18.0,
+  "months_to_fy_end": 4.0,
+  "same_day_lot": 0.0,
+  "retender_60d": 0.0,
+  "emd_ratio": 0.02,
+  "log_fee": 7.601402334583733,
+  "work_period_days": 180.0
+ },
+ "iforest_std": {
+  "dept_rate": 0.07203877990267168,
+  "log_value": 1.4909326602561466,
+  "value_missing": 0.35688103006054755,
+  "bid_window_days": 11.726239193847736,
+  "months_to_fy_end": 3.2023119170745002,
+  "same_day_lot": 0.1460301400943808,
+  "retender_60d": 0.17900733739346694,
+  "emd_ratio": 1.302524317002355,
+  "log_fee": 1.9927061507125643,
+  "work_period_days": 249.05818543013189
+ },
+ "ratio_one_bid": 0.961,
+ "ratio_four_plus": 0.9,
+ "month_names": {
+  "2022-10": "Oct 2022",
+  "2022-11": "Nov 2022",
+  "2022-12": "Dec 2022",
+  "2023-01": "Jan 2023",
+  "2023-02": "Feb 2023",
+  "2023-03": "Mar 2023",
+  "2023-04": "Apr\u2013May 2023"
+ }
+}

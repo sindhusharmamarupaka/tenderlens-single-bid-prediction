@@ -1,0 +1,5 @@
+method,caught,caught % of all single-bid,Rs crore caught,caught with no value written
+Random checking,79,18.8,199.5,8
+Rule B: re-tender then dept,108,25.7,225.4,4
+"LogReg 7 clues, monthly",101,24.0,170.0,0
+Embeddings alone,85,20.2,178.3,3
