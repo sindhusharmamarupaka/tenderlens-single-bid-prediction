@@ -1,0 +1,7 @@
+setting,value
+clues,"dept_rate, log_value, value_missing, bid_window_days, months_to_fy_end, same_day_lot, retender_60d"
+layers,"[32, 16]"
+dropout,0.0
+rounds,2
+learned from,"all 6,790 labelled tenders"
+in app,no (comparison only)
