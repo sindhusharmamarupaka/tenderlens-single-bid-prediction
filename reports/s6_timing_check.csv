@@ -1,0 +1,11 @@
+model,PR-AUC as in S5,PR-AUC opened only,change
+S5 monthly retrain (7 clues),0.258,0.248,-0.01
+S5 short memory (7 clues),0.313,0.243,-0.069
+TF-IDF monthly,0.327,0.265,-0.062
+TF-IDF short memory,0.319,0.239,-0.08
+TF-IDF + 7 clues monthly,0.33,0.26,-0.069
+TF-IDF + 7 clues short memory,0.313,0.232,-0.081
+Embeddings monthly,0.33,0.277,-0.053
+Embeddings short memory,0.325,0.258,-0.067
+Embeddings + 7 clues monthly,0.329,0.271,-0.058
+Embeddings + 7 clues short memory,0.332,0.255,-0.077

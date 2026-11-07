@@ -1,0 +1,11 @@
+method,PR-AUC,ROC-AUC,capture top 10%,capture top 20%,capture top 30%,lift top 20%,precision top 50,precision top 100,precision top 200
+Random checking,0.288,0.514,11.1,19.8,30.2,0.99,38.0,32.0,30.5
+Rule B: re-tender then dept,0.268,0.431,12.5,14.6,17.0,0.73,60.0,52.0,39.5
+LogReg 7 clues,0.252,0.426,9.0,11.7,18.6,0.59,42.0,33.0,27.5
+ANN 7 clues,0.286,0.475,11.6,22.9,31.6,1.14,38.0,33.0,33.0
+Random (average of 500 draws),0.28,0.5,9.942,19.983,29.949,0.999,27.368,27.468,27.605
+Team-up: ANN + LogReg (candidate),0.253,0.443,7.8,16.2,25.6,0.81,34.0,26.0,22.0
+ANN 34 clues,0.256,0.447,8.7,18.1,24.0,0.9,38.0,28.0,25.0
+ANN embeddings (text),0.274,0.478,11.6,23.2,32.1,1.16,12.0,15.0,30.5
+ANN embeddings + 7 clues,0.264,0.465,9.5,22.2,30.0,1.11,6.0,15.0,25.5
+S6 LogReg embeddings (saved),0.3,0.507,,22.7,,,,,

@@ -1,0 +1,4 @@
+method,checked,single-bid caught,of all single-bid %,Rs crore in caught
+Random,454,125,19.8,233.1
+Rule: re-tender then dept,454,92,14.6,425.9
+LogReg monthly retrain,454,112,17.8,422.5

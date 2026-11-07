@@ -1,0 +1,6 @@
+method,PR-AUC,ROC-AUC,capture top 10%,capture top 20%,capture top 30%,lift top 20%,precision top 50,precision top 100,precision top 200
+Random checking,0.232,0.499,7.6,18.8,30.2,0.94,18.0,18.0,18.0
+Rule B: re-tender then dept,0.279,0.507,13.5,25.7,38.0,1.28,46.0,33.0,31.5
+"LogReg 7 clues, monthly",0.256,0.552,10.0,24.0,36.3,1.2,10.0,15.0,24.0
+Embeddings alone,0.245,0.507,10.2,20.2,32.1,1.01,24.0,27.0,24.5
+Random (average of 500 draws),0.241,0.5,9.991,19.961,29.96,0.998,23.94,24.086,23.926

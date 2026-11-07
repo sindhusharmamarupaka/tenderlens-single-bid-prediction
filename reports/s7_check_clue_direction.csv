@@ -1,0 +1,8 @@
+clue,train,validation,test
+Department's past single-bid rate,0.546,0.412,0.503
+Tender value (log),0.519,0.423,0.501
+Value not written,0.466,0.484,0.459
+Days to submit bids,0.516,0.463,0.432
+Months to financial year end,0.524,0.612,0.539
+Lot posted the same day,0.501,0.508,0.496
+Re-tender within 60 days,0.5,0.516,0.515

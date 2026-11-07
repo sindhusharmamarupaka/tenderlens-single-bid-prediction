@@ -1,0 +1,5 @@
+method,"caught, top 20% of all test","caught, top 20% of each month"
+Random checking,79,81
+Rule B: re-tender then dept,108,105
+"LogReg 7 clues, monthly",101,105
+Embeddings alone,85,85

@@ -1,0 +1,7 @@
+method,PR-AUC,ROC-AUC,capture top 20%
+ANN seed 1,0.25,0.437,15.4
+ANN seed 2,0.264,0.439,18.9
+ANN seed 3,0.265,0.443,18.9
+ANN seed 4,0.231,0.403,11.9
+ANN seed 5,0.293,0.484,22.4
+ANN seed 42 (main),0.286,0.475,22.9

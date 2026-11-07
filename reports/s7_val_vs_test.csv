@@ -1,0 +1,5 @@
+method,val PR-AUC,test PR-AUC,val x random,test x random
+Random checking,0.288,0.232,1.04,0.97
+Rule B: re-tender then dept,0.268,0.279,0.97,1.17
+"LogReg 7 clues, monthly",0.248,0.256,0.89,1.07
+Embeddings alone,0.3,0.245,1.08,1.03

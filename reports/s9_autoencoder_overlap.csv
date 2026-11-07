@@ -1,0 +1,4 @@
+split,autoencoder flags,Isolation Forest flags,flagged by both,share of AE flags also IF %,score rank match
+train,138,138,75,54.3,0.842
+val,131,35,19,14.5,0.469
+test,221,74,37,16.7,0.821

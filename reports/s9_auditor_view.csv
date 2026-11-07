@@ -1,0 +1,6 @@
+method,caught (all months),Rs crore caught,caught (inside each month),checked inside each month
+Random checking,125,233.1,126,453
+Rule B: re-tender then dept,92,425.9,109,453
+LogReg 7 clues,74,398.5,102,453
+ANN 7 clues,144,106.1,127,453
+Team-up: ANN + LogReg (candidate),102,163.6,105,453

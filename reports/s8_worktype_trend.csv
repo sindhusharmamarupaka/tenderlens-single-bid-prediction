@@ -1,0 +1,9 @@
+work_type,train,val,test,tenders
+Roads and bridges,36.4,22.4,29.1,1864
+Buildings and offices,44.7,36.7,25.3,1138
+Other,36.2,38.7,22.0,978
+"Water, flood and irrigation",32.5,43.2,30.0,776
+Health,34.7,12.8,9.4,709
+Supply of goods,28.4,29.9,13.6,569
+Schools and hostels,30.5,33.1,17.4,465
+Power and electrical,29.7,31.6,23.3,291

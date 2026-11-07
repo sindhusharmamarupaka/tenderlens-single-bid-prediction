@@ -1,0 +1,9 @@
+dept_main,tenders,single-bid %,ROC-AUC,in High band %
+Assam Power Distribution Company Ltd,43,18.6,0.879,7.0
+Directorate of Agriculture and Assam Seed Corporation,47,12.8,0.663,4.3
+Public Works Building and NH Department,221,17.2,0.603,18.6
+Guwahati Municipal Corporation,149,28.9,0.575,4.7
+Public Works Roads Department,391,33.8,0.544,47.3
+Industries and Commerce Department,60,11.7,0.468,28.3
+Bodoland Territorial Council,289,33.9,0.457,4.5
+Department of Water Resources,83,25.3,0.429,14.5

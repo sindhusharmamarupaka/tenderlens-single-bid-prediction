@@ -1,0 +1,6 @@
+method,PR-AUC,ROC-AUC,capture top 10%,capture top 20%,capture top 30%,lift top 20%,precision top 50,precision top 100,precision top 200,caught in top 20%
+Random checking (S7),0.232,0.499,7.6,18.8,30.2,0.94,18.0,18.0,18.0,79
+Rule B (S7),0.279,0.507,13.5,25.7,38.0,1.28,46.0,33.0,31.5,108
+"LogReg monthly, main model (S7)",0.256,0.552,10.0,24.0,36.3,1.2,10.0,15.0,24.0,101
+LogReg learned once,0.258,0.552,10.5,24.2,35.9,1.21,16.0,19.0,24.0,102
+ANN learned once,0.232,0.483,11.4,18.5,25.4,0.93,22.0,20.0,27.5,78

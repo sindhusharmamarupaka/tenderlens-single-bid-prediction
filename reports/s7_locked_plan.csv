@@ -1,0 +1,12 @@
+method,what it is,learns from,role,setting,value
+Random checking,"Every tender gets a random score (seed 42), plus the average of 500 random draws",Nothing,Benchmark,,
+Rule B: re-tender then dept,"Quick re-tenders first, then by the department's past single-bid rate",Training department rates only (S4),Benchmark,,
+"LogReg 7 clues, monthly","Logistic Regression on the 7 base clues, retrained at the start of every month",Only tenders whose bids were opened before that month (opened only rule),Main model (app + SHAP),,
+Embeddings alone,Logistic Regression on 384 MiniLM meaning numbers of the title + description,"Train + validation tenders opened before 1 Jan 2023, learned once",Comparison,,
+,,,,scores,"PR-AUC, ROC-AUC, capture top 10/20/30%, lift, precision top 50/100/200"
+,,,,auditor view,Auditor checks the riskiest 20% of test tenders
+,,,,risk bands,"High = top 20%, Medium = next 30%, Low = bottom 50%"
+,,,,bootstrap,"500 re-draws, seed 42: main vs Random, main vs Rule B, embeddings vs Random"
+,,,,test months,"Jan, Feb, Mar, Apr-May 2023 (tenders dated before 2023 go with January)"
+,,,,rule,Score test ONCE. No new candidates after looking.
+,,,,locked at,2026-10-16 14:45:55

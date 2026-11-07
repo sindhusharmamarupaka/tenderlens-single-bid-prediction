@@ -1,0 +1,8 @@
+clue,PR-AUC drop when shuffled,LogReg weight
+Tender value (log),0.0412,-0.007
+Months to financial year end,0.0089,0.12
+Value not written,0.0087,-0.193
+Lot posted the same day,0.0081,0.031
+Re-tender within 60 days,0.0008,-0.002
+Days to submit bids,-0.0294,0.114
+Department's past single-bid rate,-0.0364,0.234

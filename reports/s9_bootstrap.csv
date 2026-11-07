@@ -1,0 +1,7 @@
+comparison,A wins (% of draws),gap low (2.5%),gap high (97.5%)
+ANN vs Random,43.0,-0.031,0.027
+ANN vs LogReg,99.8,0.006,0.061
+ANN vs Rule B,88.0,-0.013,0.046
+Team-up vs Random,0.0,-0.061,-0.01
+ANN embeddings vs Random,15.8,-0.042,0.012
+ANN embeddings + 7 clues vs Random,2.8,-0.052,0.0

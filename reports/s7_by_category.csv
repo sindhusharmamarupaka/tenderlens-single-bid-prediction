@@ -1,0 +1,4 @@
+category,tenders,single-bid %,ROC-AUC,in High band %
+Services,87,26.4,0.644,12.6
+Goods,224,15.2,0.553,10.3
+Works,1456,25.0,0.536,21.9

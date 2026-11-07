@@ -1,0 +1,6 @@
+version,best round,stop mistake score,stop PR-AUC,numbers learned
+small,16.0,0.6936,0.361,273
+medium,2.0,0.6901,0.377,801
+small + dropout,12.0,0.6898,0.36,273
+medium + dropout,20.0,0.6872,0.357,801
+LogReg (for comparison),,,0.36,8

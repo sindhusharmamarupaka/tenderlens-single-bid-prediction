@@ -1,0 +1,4 @@
+band_ann,tenders,ANN single-bid %,LogReg single-bid %
+High,453,28.0,22.5
+Medium,681,27.0,27.8
+Low,1136,28.1,29.8

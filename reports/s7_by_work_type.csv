@@ -1,0 +1,9 @@
+work_type,tenders,single-bid %,ROC-AUC,in High band %
+Other,296,22.0,0.588,17.6
+Supply of goods,169,13.6,0.581,11.2
+Power and electrical,60,23.3,0.571,23.3
+"Water, flood and irrigation",250,30.0,0.542,17.2
+Roads and bridges,499,29.1,0.53,32.5
+Schools and hostels,132,17.4,0.521,7.6
+Buildings and offices,265,25.3,0.484,15.5
+Health,96,9.4,0.399,12.5

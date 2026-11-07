@@ -1,0 +1,4 @@
+,tenders,single-bid,single-bid %
+in both lists,84,21,25.0
+only ANN,370,123,33.2
+only LogReg,370,53,14.3
